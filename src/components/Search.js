@@ -60,14 +60,17 @@ class Search extends React.Component {
     showResults = () => {
         const {results} = this.state;
         if (Object.keys(results).length && results.length) {
-            const listCommerces = results.map((commerce, index) =>
-                <li key={index}>{commerce.name} <Card commerceData= {commerce} />
-                </li>
-            );
             return (
-                <ul>
-                   {listCommerces}
-                </ul>
+                <div className="results-container">
+                    <ul>
+                    {
+                        results.map((commerce) =>
+                            <Card key={commerce.id} commerceData= {commerce} />            
+                        )
+                    }
+                    </ul>
+                </div>
+                
             )
         
         }

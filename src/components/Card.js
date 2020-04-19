@@ -7,29 +7,24 @@ class Card extends React.Component {
 
     render() {
         return(
-        <div key={this.props.id} id="make-3D-space">
+        <div id="">
             <div id="product-card">
                 <div id="product-front">
                     <div className="shadow"></div>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt.png" alt="" />
                     <div className="image_overlay"></div>
-                    <div id="view_details">View details</div>
+                    <div id="view_details"></div>
                     <div className="stats">        	
                         <div className="stats-container">
-                            <span className="product_price">$39</span>
-                            <span className="product_name">{this.props.name}</span>    
-                            <p>Men's running shirt</p>                                            
+                            <span className="product_price">{this.props.rating}</span>
+                            <span className="product_name">{this.props.commerceData.name}</span>    
+                            <p>{this.props.commerceData.types[0]}</p>                                            
                             
                             <div className="product-options">
-                            <strong>SIZES</strong>
-                            <span>XS, S, M, L, XL, XXL</span>
-                            <strong>COLORS</strong>
-                            <div className="colors">
-                                <div className="c-blue"><span></span></div>
-                                <div className="c-red"><span></span></div>
-                                <div className="c-white"><span></span></div>
-                                <div className="c-green"><span></span></div>
-                            </div>
+                            <strong>Rating</strong>
+                            <span>{this.props.commerceData.rating}</span>
+                            <strong>Adress</strong>
+                            <div className="colors">{this.props.commerceData.vicinity}</div>
+                            <img src={this.props.commerceData.icon} alt="" />
                         </div>                       
                         </div>                         
                     </div>
@@ -38,9 +33,9 @@ class Card extends React.Component {
                     <div className="shadow"></div>
                     <div id="carousel">
                         <ul>
-                            <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large.png" alt="" /></li>
-                            <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large2.png" alt="" /></li>
-                            <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large3.png" alt="" /></li>
+                            <li></li>
+                            <li>></li>
+                            <li></li>
                         </ul>
                         <div className="arrows-perspective">
                             <div className="carouselPrev">

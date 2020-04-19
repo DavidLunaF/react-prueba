@@ -1,7 +1,7 @@
 /* Generals resets and unimportant stuff */
 * { margin: 0px; padding: 0px; }
 body {
-	background: #eaebec;
+	background: #cfcfcf;
 	font-family: "Open Sans", sans-serif; 
 }
 #view-code{
@@ -10,10 +10,13 @@ body {
   text-transform:uppercase;
   font-weight:700;
   text-decoration:none;
-  position:absolute;top:640px; left:50%;margin-left:-35px;
+  position:relative;top:640px; left:50%;margin-left:-35px;
 }
 #view-code:hover{color:#34c29e;}
-
+.results-container{
+	display: flex;
+	justify-content: center;
+}
 /* --- Product Card ---- */
 #make-3D-space{
     position: relative;
@@ -22,18 +25,14 @@ body {
     height:500px;
     transform-style: preserve-3d;
     transition: transform 5s;
-    position:absolute;    
+    position:relative;    
     top:80px;
     left:50%;	
     margin-left:-167px;
 }
 #product-front, #product-back{
 	width:335px;
-	height:500px;
 	background:#fff;
-	position:absolute;
-	left:-5px;
-	top:-5px;
 	-webkit-transition: all 100ms ease-out; 
        -moz-transition: all 100ms ease-out; 
          -o-transition: all 100ms ease-out; 
@@ -52,11 +51,12 @@ body {
             transition: all 100ms ease-out; 
 }
 #product-card{
+	margin: 30px;
 	width:325px;
-	height:490px;
-	position:absolute;    
-	top:10px;
-	left:10px;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1.5rem;	
 	overflow:hidden;
     transform-style: preserve-3d;
 	-webkit-transition:  100ms ease-out; 
@@ -105,9 +105,6 @@ div#product-card.flip180{
 }
 .stats-container{
 	background:#fff;	
-	position:absolute;
-	top:386px;
-	left:0;
 	width:265px;
 	height:300px;
 	padding:27px 35px 35px;	
@@ -139,13 +136,13 @@ div#product-card.flip180{
 	font-weight:600;
 }
 .image_overlay{
-	position:absolute;
+	/* position:relative;
 	top:0;
 	left:0; 
 	width:100%;
 	height:100%;
 	background:#48daa1;
-	opacity:0;	
+	opacity:0;	 */
 }
 #product-card.animate .image_overlay{
 	opacity:0.7;	
@@ -156,6 +153,11 @@ div#product-card.flip180{
 }
 .product-options{
 	padding:2px 0 0;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
 }
 .product-options strong{
 	font-weight:700;
@@ -169,7 +171,7 @@ div#product-card.flip180{
 	margin-bottom:8px;
 }
 #view_details{	
-	position:absolute;
+	position:relative;
 	top:112px;
 	left:50%;
 	margin-left:-85px;	
@@ -234,7 +236,7 @@ div.c-white span{
 div.shadow{
 	width:335px;height:520px;
 	opacity:0;
-	position:absolute;
+	position:relative;
 	top:0;
 	left:0;
 	z-index:3;
@@ -253,7 +255,7 @@ div.shadow{
     background: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.1)); 
 }
 #flip-back{
-	position:absolute;
+	position:relative;
 	top:20px;
 	right:20px;
 	width:30px;
@@ -262,7 +264,7 @@ div.shadow{
 }
 #cx, #cy{
 	background:#d2d5dc;
-	position:absolute;
+	position:relative;
 	width:0px;
 	top:15px;
 	right:15px;
@@ -347,7 +349,7 @@ div.shadow{
 
 }
 #carousel ul{
-	position:absolute;
+	position:relative;
 	top:0;
 	left:0;
 }
@@ -420,7 +422,7 @@ div.shadow{
 	height:2px;
 	width:15px;
 	background:#48cfad;
-	position:absolute;
+	position:relative;
 	top:31px;
 	left:17px;
 	-ms-transform: rotate(45deg); 

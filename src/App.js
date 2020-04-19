@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Search from './components/Search';
-
+import Card from './components/Card'
 function success(pos) {
   
   const crd = pos.coords;

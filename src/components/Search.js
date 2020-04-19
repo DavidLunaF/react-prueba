@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Card from './Card';
 
 class Search extends React.Component {
 
@@ -34,8 +35,10 @@ class Search extends React.Component {
         axios.get(searchUrl, {
             cancelToken: this.cancel.token
         }).then( response => {
-            const result = response.data.results;
-            console.log(result);
+            this.setState({
+                results: response.data.results
+            })
+            console.log(this.state.results);
         }).catch( error => {
             console.log(error)
             if (axios.isCancel(error) || error) {
@@ -54,9 +57,25 @@ class Search extends React.Component {
         });
     }
 
+    showResults = () => {
+        const {results} = this.state;
+        if (Object.keys(results).length && results.length) {
+            const listCommerces = results.map((commerce, index) =>
+                <li key={index}>{commerce.name} <Card commerceData= {commerce} />
+                </li>
+            );
+            return (
+                <ul>
+                   {listCommerces}
+                </ul>
+            )
+        
+        }
+    }
+
     render () {
         const query = this.state.query;
-
+        let commerces = '';
         return (
             <div className="container">
                 <label className="search-label" htmlFor="search-input">
@@ -69,7 +88,7 @@ class Search extends React.Component {
                         placeholder="Busca Algo">
                         </input>
                 </label>
-            
+                {this.showResults()}
             </div>
         );
     }
